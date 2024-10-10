@@ -2,7 +2,6 @@
 SOURCES = $(wildcard mlkem/*.c) $(wildcard mlkem/debug/*.c)
 ifeq ($(OPT),1)
 	SOURCES += $(wildcard mlkem/native/aarch64/*.[csS]) $(wildcard mlkem/native/x86_64/*.[csS])
-	CPPFLAGS += -DMLKEM_USE_NATIVE
 endif
 
 CPPFLAGS += -Imlkem -Imlkem/sys -Imlkem/native -Imlkem/native/aarch64 -Imlkem/native/x86_64
