@@ -71,8 +71,8 @@ class TEST_TYPES(IntEnum):
             case TEST_TYPES.KAT:
                 return "gen_KAT"
 
-    def bin_path(self, scheme):
-        return f"test/build/{scheme.name.lower()}/bin/{self.bin()}{scheme.suffix()}"
+    def bin_path(self, scheme: SCHEME, opt: bool):
+        return f'test/build/{scheme.name.lower()}/bin/{self.bin()}{scheme.suffix()}_{"opt" if opt else "ref" }'
 
 
 class SCHEME(IntEnum):
@@ -295,7 +295,7 @@ class State(object):
         results = {}
         for scheme in SCHEME:
             result = self.run_scheme(
-                test_type.bin_path(scheme),
+                test_type.bin_path(scheme, self.opt),
                 run_as_root,
                 exec_wrapper,
             )
