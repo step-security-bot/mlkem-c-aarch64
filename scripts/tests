@@ -772,7 +772,8 @@ def all(
             print(f"{result.stderr}")
             run_cmds.pop(k, None)
         if gh_env is not None:
-            print(f"::endgroup::")
+            print(f"::endgroup::", flush=True)
+        sys.stdout.flush()
 
     # parallelly run
     async def run(k: (str, str), cmd: str):
@@ -792,6 +793,7 @@ def all(
             print(stderr.decode())
         if gh_env is not None:
             print(f"::endgroup::")
+        sys.stdout.flush()
 
         return p.returncode
 
