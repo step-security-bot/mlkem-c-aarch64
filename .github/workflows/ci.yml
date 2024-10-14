@@ -92,7 +92,7 @@ jobs:
             ec2_ami: ubuntu-latest (custom AMI)
             ec2_ami_id: ami-0d47e137a1108e078 # x86_64 ubuntu-latest, 32g
             compile_mode: cross
-            opt: non-opt
+            opt: no_opt
             kattest: true
             cbmc: 'false'
           - name: Graviton3, CBMC (c7g.xlarge)
