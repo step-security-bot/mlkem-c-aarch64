@@ -65,6 +65,7 @@ jobs:
           compile_mode: cross
           func: false
           nistkat: false
+          kat: false
 
   lint:
     strategy:

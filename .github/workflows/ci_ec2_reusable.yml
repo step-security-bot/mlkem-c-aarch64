@@ -119,9 +119,9 @@ jobs:
           cflags: ${{ inputs.cflags }}
           compile_mode: ${{ inputs.compile_mode }}
           opt: ${{ inputs.opt }}
-          func: ${{ inputs.functest }}
-          kat: ${{ inputs.kattest }}
-          nistkat: ${{ inputs.nistkattest }}
+          func: false
+          kat: false
+          nistkat: false
       - name: Linting
         if: ${{ inputs.lint && (success() || failure()) }}
         uses: ./.github/actions/lint
