@@ -56,6 +56,8 @@ runs:
         uses: ./.github/actions/functest
         with:
           nix-shell: ${{ inputs.nix-shell }}
+          nix-cache: ${{ inputs.nix-cache }}
+          nix-verbose: ${{ inputs.nix-verbose }}
           custom_shell: ${{ inputs.custom_shell }}
           cflags: ${{ inputs.cflags }}
           mode: cross

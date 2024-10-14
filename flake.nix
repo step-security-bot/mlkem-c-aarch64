@@ -91,7 +91,7 @@
               };
           };
 
-          devShells.bench = wrapShell pkgs.mkShellNoCC { packages = core { cross = false; }; };
+          devShells.ci-native = wrapShell pkgs.mkShellNoCC { packages = core { cross = false; }; };
           devShells.ci = wrapShell pkgs.mkShellNoCC { packages = core { }; };
           devShells.ci-cbmc = wrapShell pkgs.mkShellNoCC { packages = core { cross = false; } ++ cbmcpkg; };
           devShells.ci-linter = wrapShell pkgs.mkShellNoCC { packages = linters; };
