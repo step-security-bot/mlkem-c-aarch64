@@ -16,7 +16,7 @@ reflect its broadened scope.
 ### Goals
 
 **mlkem-c-aarch64** aims for _assurance_, _ease of use_, and _performance_. We only include implementations into
-**mlkem-c-aarch64** which are manually auditable or for which we see a path towards formal verification. All assembly aims
+which are manually auditable or for which we see a path towards formal verification. All assembly aims
 to be readable and micro-optimization deferred to automated tooling such as
 [SLOTHY](https://slothy-optimizer.github.io/slothy/). Ultimately, **mlkem-c-aarch64** strives for constant-time
 implementations for which the C-code is verified to be free of undefined behaviour, and where all assembly is
