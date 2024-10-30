@@ -34,7 +34,7 @@ jobs:
     name: Quickcheck (${{ matrix.target.name }})
     runs-on: ${{ matrix.target.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: make quickcheck
         run: |
           OPT=0 make quickcheck >/dev/null
@@ -75,7 +75,7 @@ jobs:
     name: Functional tests (${{ matrix.target.name }})
     runs-on: ${{ matrix.target.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: native build
         uses: ./.github/actions/multi-functest
         with:
@@ -122,7 +122,7 @@ jobs:
              }}
     runs-on: ${{ matrix.target.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: native build+functest (gcc-4.8)
         uses: ./.github/actions/multi-functest
         with:
@@ -175,7 +175,7 @@ jobs:
     name: Linting
     runs-on: ${{ matrix.system }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: ./.github/actions/lint
         with:
           nix-shell: ci-linter
